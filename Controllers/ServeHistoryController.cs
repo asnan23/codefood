@@ -3,6 +3,7 @@ using CodeFood_API.Asnan.Models.Param;
 using CodeFood_API.Asnan.Models.Response;
 using CodeFood_API.Asnan.Repository;
 using CodeFood_API.Asnan.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace CodeFood_API.Asnan.Controllers
 {
+    [Authorize]
     [Route("/serve-histories")]
     public class ServeHistoryController : Controller
     {
@@ -20,7 +22,7 @@ namespace CodeFood_API.Asnan.Controllers
         private readonly ApplicationDbContext _db;
         private readonly IValidationErrorRepository _validationErrorRepository;
         private readonly IUtility _utility;
-        public ServeHistoryController(IUnitOfWork unitOfWork, ApplicationDbContext db, 
+        public ServeHistoryController(IUnitOfWork unitOfWork, ApplicationDbContext db,
             IValidationErrorRepository validationErrorRepository, IUtility utility)
         {
             _unitOfWork = unitOfWork;
@@ -31,7 +33,7 @@ namespace CodeFood_API.Asnan.Controllers
             _utility = utility;
         }
 
-        [HttpPost]
+        [HttpPost("serve-histories")]
         public IActionResult Post([FromBody] StartCooking model)
         {
             if (!ModelState.IsValid)

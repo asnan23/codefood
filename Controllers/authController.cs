@@ -7,6 +7,7 @@ using CodeFood_API.Asnan.Models.Setting;
 using CodeFood_API.Asnan.Models.ViewModel;
 using CodeFood_API.Asnan.Repository;
 using CodeFood_API.Asnan.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -22,6 +23,7 @@ using System.Threading.Tasks;
 
 namespace CodeFood_API.Asnan.Controllers
 {
+    [AllowAnonymous]
     [Route("/auth")]
     public class authController : Controller
     {

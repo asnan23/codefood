@@ -20,6 +20,7 @@ namespace CodeFood_API.Asnan
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseUrls("http://*:3030");
                     webBuilder.UseStartup<Startup>();
                 });
     }

@@ -43,8 +43,17 @@ namespace CodeFood_API.Asnan.Extensions
             var usersDataBase = config["MYSQL_DBNAME"] ?? config.GetConnectionString("MYSQL_DBNAME");
 
             var connectionString = $"server={host}; userid={userid};pwd={password};port={port};database={usersDataBase}";
-            services.AddDbContext<ApplicationDbContext>(o => o.UseMySql(connectionString,
-                MySqlServerVersion.LatestSupportedServerVersion));
+            services.AddDbContext<ApplicationDbContext>(o =>
+            o.UseMySql(connectionString,
+                MySqlServerVersion.LatestSupportedServerVersion,
+                 mySqlOptions =>
+                 {
+                     mySqlOptions.EnableRetryOnFailure(
+                     maxRetryCount: 100,
+                     maxRetryDelay: TimeSpan.FromSeconds(10),
+                     errorNumbersToAdd: null);
+                 }
+                ));
         }
 
     }

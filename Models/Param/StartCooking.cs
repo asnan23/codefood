@@ -9,11 +9,11 @@ namespace CodeFood_API.Asnan.Models.Param
     public class StartCooking
     {
         [Required(ErrorMessage = "nServing is required")]
-        [RegularExpression("[^1-9]", ErrorMessage = "Invalid target serving")]
+       // [RegularExpression("[^1-9]", ErrorMessage = "Invalid target serving")]
         [MinLength(1,ErrorMessage = "Target serving minimum 1")]
         public int nServing { get; set; }
         [Required(ErrorMessage = "recipeId is required")]
-        [RegularExpression("[^1-9]", ErrorMessage = "Invalid recipe id")]
+       // [RegularExpression("[^1-9]", ErrorMessage = "Invalid recipe id")]
         public int recipeId { get; set; }
     }
 

@@ -37,7 +37,7 @@ namespace CodeFood_API.Asnan
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddServices(Configuration);
-            //services.ConfigureCors();
+            services.ConfigureCors();
             //services.ConfigureIISIntegration();
             services.ConfigureMySqlContext(Configuration);
 
@@ -62,7 +62,11 @@ namespace CodeFood_API.Asnan
             //    options.SuppressModelStateInvalidFilter = true;
             //});
             services.AddControllers();
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
             {
                 options.RequireHttpsMetadata = false;
                 options.SaveToken = true;
@@ -72,7 +76,10 @@ namespace CodeFood_API.Asnan
                     ValidateAudience = true,
                     ValidAudience = Configuration["JWTSettings:Audience"],
                     ValidIssuer = Configuration["JWTSettings:Issuer"],
+                    ValidateLifetime = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWTSettings:Key"]))
+
+
                 };
             });
 
@@ -121,9 +128,9 @@ namespace CodeFood_API.Asnan
 
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CodeFood_API.Asnan.WebApi.xml"));
-
+            app.UseCors("CorsPolicy");
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

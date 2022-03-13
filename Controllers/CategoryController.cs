@@ -2,6 +2,7 @@
 using CodeFood_API.Asnan.Models.Response;
 using CodeFood_API.Asnan.Repository;
 using CodeFood_API.Asnan.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace CodeFood_API.Asnan.Controllers
 {
+    [AllowAnonymous]
     [Route("/recipe-categories")]
     public class CategoryController : Controller
     {
