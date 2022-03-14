@@ -48,10 +48,7 @@ namespace CodeFood_API.Asnan.Extensions
                 MySqlServerVersion.LatestSupportedServerVersion,
                  mySqlOptions =>
                  {
-                     mySqlOptions.EnableRetryOnFailure(
-                     maxRetryCount: 100,
-                     maxRetryDelay: TimeSpan.FromSeconds(10),
-                     errorNumbersToAdd: null);
+                     mySqlOptions.EnableRetryOnFailure();
                  }
                 ));
         }

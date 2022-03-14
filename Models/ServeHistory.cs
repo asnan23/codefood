@@ -8,8 +8,10 @@ namespace CodeFood_API.Asnan.Models
 {
     public class ServeHistory
     {
+        [Key]       
+        public int id { get; set; }
         [StringLength(4)]
-        public string id { get; set; }
+        public string code { get; set; }
         public int userId { get; set; }
         public int nServing { get; set; }
         public int recipeId { get; set; }

@@ -10,7 +10,7 @@ namespace CodeFood_API.Asnan.Models.Param
     {
         [Required(ErrorMessage = "nServing is required")]
        // [RegularExpression("[^1-9]", ErrorMessage = "Invalid target serving")]
-        [MinLength(1,ErrorMessage = "Target serving minimum 1")]
+      //  [MinLength(1,ErrorMessage = "Target serving minimum 1")]
         public int nServing { get; set; }
         [Required(ErrorMessage = "recipeId is required")]
        // [RegularExpression("[^1-9]", ErrorMessage = "Invalid recipe id")]

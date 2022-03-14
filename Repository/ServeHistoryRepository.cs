@@ -21,6 +21,9 @@ namespace CodeFood_API.Asnan.Repository
             _db.ServeHistories.Update(obj);
         }
 
-        
+        public ServeHistory GetbyCode(string code)
+        {
+           return _db.ServeHistories.Where(t => t.code == code).FirstOrDefault();
+        }
     }
 }

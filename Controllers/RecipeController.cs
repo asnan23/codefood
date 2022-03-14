@@ -95,11 +95,6 @@ namespace CodeFood_API.Asnan.Controllers
             };
 
             var ingredients = _db.Ingredients.Where(t => t.recipeId == obj.id).ToList();
-            foreach (var item in ingredients)
-            {
-                recipeDto.ingredientsPerServing.Add(new IngredientDto { item = item.item, unit = item.unit, value = item.value });
-            }
-
             List<IngredientDto> ingredientList = new List<IngredientDto>();
             foreach (var ing in ingredients)
             {
@@ -248,20 +243,21 @@ namespace CodeFood_API.Asnan.Controllers
             {
                 recipes = recipes.Where(s => s.name.Contains(q)).ToList();
             }
-
-            switch (sort)
+            if (!String.IsNullOrEmpty(sort))
             {
-                case "name_desc":
-                    recipes = recipes.OrderByDescending(s => s.name).ToList();
-                    break;
-                case "like_desc":
-                    recipes = recipes.OrderByDescending(s => s.nReactionLike).ToList();
-                    break;
-                default:
-                    recipes = recipes.OrderBy(s => s.name).ToList();
-                    break;
+                switch (sort)
+                {
+                    case "name_desc":
+                        recipes = recipes.OrderByDescending(s => s.name).ToList();
+                        break;
+                    case "like_desc":
+                        recipes = recipes.OrderByDescending(s => s.nReactionLike).ToList();
+                        break;
+                    default:
+                        recipes = recipes.OrderBy(s => s.name).ToList();
+                        break;
+                }
             }
-            int total = recipes.Count;
             GetAllRecipeDto getAllRecipe = new GetAllRecipeDto
             {
                 total = recipes.Count

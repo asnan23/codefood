@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
 using System.Net;
 using Microsoft.AspNetCore.Diagnostics;
+using CodeFood_API.Asnan.DbInitializer;
 
 namespace CodeFood_API.Asnan
 {
@@ -38,7 +39,6 @@ namespace CodeFood_API.Asnan
         {
             services.AddServices(Configuration);
             services.ConfigureCors();
-            //services.ConfigureIISIntegration();
             services.ConfigureMySqlContext(Configuration);
 
             services.AddIdentity<ApplicationUser, IdentityRole>(opt =>
@@ -121,6 +121,7 @@ namespace CodeFood_API.Asnan
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+           // MigrationManager.MigrateDatabase(app);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

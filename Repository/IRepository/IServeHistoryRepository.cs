@@ -9,5 +9,6 @@ namespace CodeFood_API.Asnan.Repository.IRepository
     public interface IServeHistoryRepository : IRepository<ServeHistory>
     {
         void Update(ServeHistory obj);
+        ServeHistory GetbyCode(string code);
     }
 }
