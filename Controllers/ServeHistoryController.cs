@@ -12,7 +12,8 @@ using System.Threading.Tasks;
 
 namespace CodeFood_API.Asnan.Controllers
 {
-    [Authorize]
+  //  [Authorize]
+    [AllowAnonymous]
     [Route("/serve-histories")]
     public class ServeHistoryController : Controller
     {
@@ -33,7 +34,7 @@ namespace CodeFood_API.Asnan.Controllers
             _utility = utility;
         }
 
-        [HttpPost("serve-histories")]
+        [HttpPost]
         public IActionResult Post([FromBody] StartCooking model)
         {
             if (!ModelState.IsValid)
