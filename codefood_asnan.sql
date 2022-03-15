@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: codefood
+-- Host: 127.0.0.1    Database: codefood_asnan
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -35,7 +35,7 @@ CREATE TABLE `__efmigrationshistory` (
 
 LOCK TABLES `__efmigrationshistory` WRITE;
 /*!40000 ALTER TABLE `__efmigrationshistory` DISABLE KEYS */;
-INSERT INTO `__efmigrationshistory` VALUES ('20220310202813_CreatingIdentityScheme','5.0.15'),('20220310203604_CreatingIdentityUser','5.0.15'),('20220311175713_editcategory','5.0.15'),('20220312093843_addRecipeIngStep','5.0.15'),('20220312095648_editRecipeIngStep','5.0.15'),('20220312182733_addServeHistoryandMasterUser','5.0.15'),('20220312190326_editMasterUser','5.0.15');
+INSERT INTO `__efmigrationshistory` VALUES ('20220314050026_initialdb','5.0.15'),('20220314053539_editkeyServeHistories','5.0.15');
 /*!40000 ALTER TABLE `__efmigrationshistory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `aspnetroles` (
 
 LOCK TABLES `aspnetroles` WRITE;
 /*!40000 ALTER TABLE `aspnetroles` DISABLE KEYS */;
-INSERT INTO `aspnetroles` VALUES ('33e7fd0a-7f98-489a-a227-21df5981f8d2','User','USER','90268f00-0c8a-4e4a-af75-92e6c3469c19'),('ab21c734-a6af-4828-999f-d3f178c1a10d','Admin','ADMIN','a6af29c4-df27-4121-b01e-d3a6a2ad2981');
+INSERT INTO `aspnetroles` VALUES ('0564f9c3-6b6f-420c-bfdf-8ea1a5c066c1','User','USER','17c65df2-dad9-46c0-91df-ff254aa59eb3'),('616a0206-a6b7-4b99-b963-e8ef0ab8c618','Admin','ADMIN','5382d28f-2ec8-4138-9d07-0b5eb163580a');
 /*!40000 ALTER TABLE `aspnetroles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,7 +170,7 @@ CREATE TABLE `aspnetuserroles` (
 
 LOCK TABLES `aspnetuserroles` WRITE;
 /*!40000 ALTER TABLE `aspnetuserroles` DISABLE KEYS */;
-INSERT INTO `aspnetuserroles` VALUES ('ddebf6f2-a55a-4eeb-af5f-f69d4b609abf','33e7fd0a-7f98-489a-a227-21df5981f8d2');
+INSERT INTO `aspnetuserroles` VALUES ('54cacc81-32ea-418b-8faa-40fdf3b7a27a','616a0206-a6b7-4b99-b963-e8ef0ab8c618');
 /*!40000 ALTER TABLE `aspnetuserroles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,7 +211,7 @@ CREATE TABLE `aspnetusers` (
 
 LOCK TABLES `aspnetusers` WRITE;
 /*!40000 ALTER TABLE `aspnetusers` DISABLE KEYS */;
-INSERT INTO `aspnetusers` VALUES ('06953ee2-de23-4e4a-8ecf-f8a173e6c9e4',NULL,NULL,'admin','ADMIN','admin@example.com','ADMIN@EXAMPLE.COM',0,'AQAAAAEAACcQAAAAEHcPUlPU+mOb+W+62IIZST2SlvYlSm6m878DYU6yMLsV24y6T8tBYIVXUwrvMzIh8A==','PER5U5YFBI2Q52SSANNAJBC57WM7PPUL','0d346b2b-6332-4bc7-b6a7-a7b4aba0eb55',NULL,0,0,NULL,1,0),('78b0f89c-d7b1-476c-bb2d-cb2a377291cb',NULL,NULL,'coba','COBA','coba@example.com','COBA@EXAMPLE.COM',0,'AQAAAAEAACcQAAAAEEwfVrYa/zxq/10tUVs8sDY245rYgpLwsLjh9p78kYeKkVgTQbmlro5M2qYe5dml1g==','7P7KMKUUOG5FUPC7LEAQCCMPG7OUPGXB','cf920ad0-89cc-44b8-919a-4bdccc43ddae',NULL,0,0,NULL,1,0),('b1b25335-4820-48ba-9da6-410611b5742e',NULL,NULL,'developer','DEVELOPER','developer@example.com','DEVELOPER@EXAMPLE.COM',0,'AQAAAAEAACcQAAAAELzNazc9BO0RhWwQN1bLyHF+VhWj8Ll97ZfVNKA13kJYaM6SDh1Okr8D935a/AvxVw==','FG3KWLS4EVMZ3O4SAEA4IFMGRTRHCLA3','f8b976de-f840-45e8-b332-e03f0454de5d',NULL,0,0,NULL,1,2),('b98e840f-e395-45ff-950d-8f5aa6685e03',NULL,NULL,'user','USER','user@example.com','USER@EXAMPLE.COM',0,'AQAAAAEAACcQAAAAEA2ZfyZqA+MJW6RMdvApuw3B0nZCdOwApNhWHhm2FYEXv9CRgu3icFAPtmvmjcMZUg==','576CH47IYZEGP2XGN2MNU7HAMGWFUOPS','ab8721a6-ec23-473d-9c25-87e93a0ba820',NULL,0,0,'2022-03-11 16:14:10.098546',1,0),('ddebf6f2-a55a-4eeb-af5f-f69d4b609abf',NULL,NULL,'cobarun','COBARUN','cobarun@example.com','COBARUN@EXAMPLE.COM',0,'AQAAAAEAACcQAAAAEMfpM237snXJttXibmy+aBxvtfSk11K27T43vjjknLk4HEsmfiKs4iK5mmpauimEAw==','D4RAOKT6FRM3FABYLLH5OD47NKYR4NDU','1daad92b-273d-4906-826f-399143d48810',NULL,0,0,NULL,1,0);
+INSERT INTO `aspnetusers` VALUES ('54cacc81-32ea-418b-8faa-40fdf3b7a27a',NULL,NULL,'developer','DEVELOPER','developer@skyshi.com','DEVELOPER@SKYSHI.COM',0,'AQAAAAEAACcQAAAAELg6zzBm2uCBhwl2YXAGqcOtKAKtqSFC6/meC5HY0L8RA434JmF7PKkuqfKipgw9ZQ==','FPFJWOSRIMAIWWAVEJWNS3ZXJFS7RNM5','07837561-4f42-4b90-9f55-265723ec70d8',NULL,0,0,NULL,1,0);
 /*!40000 ALTER TABLE `aspnetusers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -254,7 +254,7 @@ CREATE TABLE `categories` (
   `createdAt` datetime(6) NOT NULL,
   `updatedAt` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,7 +263,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (3,'pedas','2022-03-13 12:18:09.334796','2022-03-13 12:18:29.669690');
+INSERT INTO `categories` VALUES (1,'Sambal','2022-03-14 12:28:36.181302','2022-03-14 12:28:36.181334');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -281,7 +281,7 @@ CREATE TABLE `ingredients` (
   `unit` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `value` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -290,7 +290,7 @@ CREATE TABLE `ingredients` (
 
 LOCK TABLES `ingredients` WRITE;
 /*!40000 ALTER TABLE `ingredients` DISABLE KEYS */;
-INSERT INTO `ingredients` VALUES (1,1,'Daging Ayam cincang ukuran Sedang','Gram',85),(2,1,'Bawang Goreng','Gram',5),(9,2,'Daging Ayam cincang ukuran Sedang','Gram',85),(10,2,'Bawang Goreng','Gram',5);
+INSERT INTO `ingredients` VALUES (3,1,'Daging Ayam cincang ukuran Sedang','Gram',85),(4,1,'Bawang Goreng','Gram',5);
 /*!40000 ALTER TABLE `ingredients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -309,7 +309,7 @@ CREATE TABLE `masterusers` (
   `phoneNumber` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `email` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -318,7 +318,7 @@ CREATE TABLE `masterusers` (
 
 LOCK TABLES `masterusers` WRITE;
 /*!40000 ALTER TABLE `masterusers` DISABLE KEYS */;
-INSERT INTO `masterusers` VALUES (1,'78b0f89c-d7b1-476c-bb2d-cb2a377291cb',NULL,NULL,NULL,'coba@example.com'),(2,'b1b25335-4820-48ba-9da6-410611b5742e',NULL,NULL,NULL,'developer@example.com'),(3,'06953ee2-de23-4e4a-8ecf-f8a173e6c9e4',NULL,NULL,NULL,'admin@example.com'),(4,'ddebf6f2-a55a-4eeb-af5f-f69d4b609abf',NULL,NULL,NULL,'cobarun@example.com');
+INSERT INTO `masterusers` VALUES (1,'54cacc81-32ea-418b-8faa-40fdf3b7a27a',NULL,NULL,NULL,'developer@skyshi.com');
 /*!40000 ALTER TABLE `masterusers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -350,7 +350,7 @@ CREATE TABLE `recipes` (
 
 LOCK TABLES `recipes` WRITE;
 /*!40000 ALTER TABLE `recipes` DISABLE KEYS */;
-INSERT INTO `recipes` VALUES (2,'Sae Sapi edited',3,'https://picsum.photos/264/182?i=2',NULL,NULL,NULL,1,'2022-03-13 12:29:00.609090','2022-03-13 13:28:24.975343');
+INSERT INTO `recipes` VALUES (1,'Sae Sapi edited',1,'https://picsum.photos/264/182?i=2',NULL,NULL,NULL,1,'2022-03-14 12:30:11.130956','2022-03-14 12:31:02.258233');
 /*!40000 ALTER TABLE `recipes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -363,6 +363,7 @@ DROP TABLE IF EXISTS `servehistories`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `servehistories` (
   `id` int NOT NULL AUTO_INCREMENT,
+  `code` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `userId` int NOT NULL,
   `nServing` int NOT NULL,
   `recipeId` int NOT NULL,
@@ -373,7 +374,7 @@ CREATE TABLE `servehistories` (
   `createdAt` datetime(6) NOT NULL,
   `updatedAt` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -382,6 +383,7 @@ CREATE TABLE `servehistories` (
 
 LOCK TABLES `servehistories` WRITE;
 /*!40000 ALTER TABLE `servehistories` DISABLE KEYS */;
+INSERT INTO `servehistories` VALUES (1,'12NA',0,2,1,3,3,NULL,'progress','2022-03-14 12:37:15.736330','2022-03-14 12:37:15.736337');
 /*!40000 ALTER TABLE `servehistories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -398,7 +400,7 @@ CREATE TABLE `steps` (
   `stepOrder` int NOT NULL,
   `description` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -407,7 +409,7 @@ CREATE TABLE `steps` (
 
 LOCK TABLES `steps` WRITE;
 /*!40000 ALTER TABLE `steps` DISABLE KEYS */;
-INSERT INTO `steps` VALUES (1,1,1,'step 1'),(2,1,2,'step 2'),(3,1,3,'step 3'),(13,2,1,'step 1'),(14,2,2,'step 2'),(15,2,3,'step final');
+INSERT INTO `steps` VALUES (4,1,1,'step 1'),(5,1,2,'step 2'),(6,1,3,'step final');
 /*!40000 ALTER TABLE `steps` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -420,4 +422,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-13 18:37:48
+-- Dump completed on 2022-03-15  9:51:09
